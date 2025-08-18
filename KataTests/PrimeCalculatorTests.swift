@@ -14,8 +14,9 @@ enum PrimeCalculator {
         guard upperBound != 2 else { return [2] }
 
         var knownPrimes = [2]
+        let candidates = (3...upperBound)
 
-        for candidate in (3...upperBound) {
+        for candidate in candidates {
             if isPrime(candidate, knownPrimes: knownPrimes) {
                 knownPrimes.append(candidate)
             }
