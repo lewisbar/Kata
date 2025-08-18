@@ -15,11 +15,15 @@ enum PrimeCalculator {
 }
 
 struct PrimeCalculatorTests {
-    @Test func primesUpTo1_returnsEmpty() {
+    @Test func primesUpToOne_returnsEmpty() {
         #expect(PrimeCalculator.primes(upTo: 1) == [])
     }
 
     @Test func primesUpToNegativeValue_returnsEmpty() {
         #expect(PrimeCalculator.primes(upTo: -1) == [])
+    }
+
+    @Test func primesUpToZero_returnsEmpty() {
+        #expect(PrimeCalculator.primes(upTo: 0) == [])
     }
 }
