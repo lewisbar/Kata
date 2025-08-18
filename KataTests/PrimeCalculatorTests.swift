@@ -26,7 +26,12 @@ enum PrimeCalculator {
     }
 
     private static func isPrime(_ candidate: Int, knownPrimes: [Int]) -> Bool {
+        let root = Int(sqrt(Double(candidate)))
+
         for knownPrime in knownPrimes {
+            guard knownPrime <= root else {
+                return true
+            }
             if candidate % knownPrime == 0 {
                 return false
             }
@@ -94,5 +99,12 @@ struct PrimeCalculatorTests {
 
     @Test func primesUpToThirteen_returnsTwoThreeFiveSevenElevenAndThirteen() {
         #expect(PrimeCalculator.primes(upTo: 13) == [2, 3, 5, 7, 11, 13])
+    }
+
+    @Test func primesUpTo_measurePerformance() {
+        let startTime = CFAbsoluteTimeGetCurrent()
+        let _ = PrimeCalculator.primes(upTo: 100_000)
+        let executionTime = CFAbsoluteTimeGetCurrent() - startTime
+        #expect(executionTime < 0.1)
     }
 }
