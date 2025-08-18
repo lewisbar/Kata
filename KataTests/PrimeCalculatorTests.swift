@@ -71,8 +71,8 @@ struct PrimeCalculatorTests {
 
     @Test func primesUpTo_measurePerformance() {
         let startTime = CFAbsoluteTimeGetCurrent()
-        let _ = PrimeCalculator.primes(upTo: 100_000)
+        let _ = PrimeCalculator.primes(upTo: 10_000)
         let executionTime = CFAbsoluteTimeGetCurrent() - startTime
-        #expect(executionTime < 0.1)
+        #expect(executionTime < 0.01)
     }
 }
