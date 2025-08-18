@@ -10,12 +10,27 @@ import Kata
 
 enum PrimeCalculator {
     static func primes(upTo upperBound: Int) -> [Int] {
-        guard upperBound != 2 else { return [2] }
         guard upperBound > 1 else { return [] }
+        guard upperBound != 2 else { return [2] }
 
-        return [2] + (3...upperBound).filter { number in
-            number % 2 != 0
+        var knownPrimes = [2]
+
+        for candidate in (3...upperBound) {
+            if isPrime(candidate, knownPrimes: knownPrimes) {
+                knownPrimes.append(candidate)
+            }
         }
+
+        return knownPrimes
+    }
+
+    private static func isPrime(_ candidate: Int, knownPrimes: [Int]) -> Bool {
+        for knownPrime in knownPrimes {
+            if candidate % knownPrime == 0 {
+                return false
+            }
+        }
+        return true
     }
 }
 
@@ -58,5 +73,9 @@ struct PrimeCalculatorTests {
 
     @Test func primesUpToEight_returnsTwoThreeFiveAndSeven() {
         #expect(PrimeCalculator.primes(upTo: 8) == [2, 3, 5, 7])
+    }
+
+    @Test func primesUpToNine_returnsTwoThreeFiveAndSeven() {
+        #expect(PrimeCalculator.primes(upTo: 9) == [2, 3, 5, 7])
     }
 }
