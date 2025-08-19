@@ -76,4 +76,20 @@ struct PrimeCalculator2Tests {
     @Test func calculatePrimes_withUpperBoundNine_returnsTwoThreeSeven() {
         #expect(PrimeCalculator2.calculatePrimes(upTo: 9) == [2, 3, 5, 7])
     }
+
+    @Test func calculatePrimes_withUpperBoundTen_returnsTwoThreeSeven() {
+        #expect(PrimeCalculator2.calculatePrimes(upTo: 10) == [2, 3, 5, 7])
+    }
+
+    @Test func calculatePrimes_withUpperBoundEleven_returnsTwoThreeSevenEleven() {
+        #expect(PrimeCalculator2.calculatePrimes(upTo: 11) == [2, 3, 5, 7, 11])
+    }
+
+    @Test func calculatePrimes_withUpperBoundTwelve_returnsTwoThreeSevenEleven() {
+        #expect(PrimeCalculator2.calculatePrimes(upTo: 12) == [2, 3, 5, 7, 11])
+    }
+
+    @Test func calculatePrimes_withUpperBoundThirteen_returnsTwoThreeSevenElevenThirteen() {
+        #expect(PrimeCalculator2.calculatePrimes(upTo: 13) == [2, 3, 5, 7, 11, 13])
+    }
 }
