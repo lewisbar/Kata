@@ -27,7 +27,11 @@ public enum PrimeCalculator2 {
 
 private extension Int {
     func isPrime(allLowerPrimes: [Int]) -> Bool {
+        let root = Int(sqrt(Double(self)))
+
         for prime in allLowerPrimes {
+            guard prime <= root else { return true }
+
             if self % prime == 0 {
                 return false
             }

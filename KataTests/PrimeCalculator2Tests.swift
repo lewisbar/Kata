@@ -68,4 +68,12 @@ struct PrimeCalculator2Tests {
     @Test func calculatePrimes_withUpperBoundThirteen_returnsTwoThreeSevenElevenThirteen() {
         #expect(PrimeCalculator2.calculatePrimes(upTo: 13) == [2, 3, 5, 7, 11, 13])
     }
+
+    @Test func calculatePrimes_measurePerformance() {
+        let startTime = CFAbsoluteTimeGetCurrent()
+        let _ = PrimeCalculator2.calculatePrimes(upTo: 10_000)
+        let executionTime = CFAbsoluteTimeGetCurrent() - startTime
+
+        #expect(executionTime < 0.01)
+    }
 }
