@@ -1,11 +1,11 @@
 //
-//  PrimeCalculator.swift
+//  PrimeCalculator1.swift
 //  Kata
 //
 //  Created by LennartWisbar on 18.08.25.
 //
 
-public enum PrimeCalculator {
+public enum PrimeCalculator1 {
     public static func primes(upTo upperBound: Int) -> [Int] {
         guard upperBound > 1 else { return [] }
         guard upperBound != 2 else { return [2] }
