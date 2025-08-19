@@ -14,7 +14,9 @@ enum PrimeCalculator2 {
 
         var knownPrimes = [2]
 
-        for candidate in 3...upperBound {
+        let candidates = 3...upperBound
+
+        for candidate in candidates {
             var isPotentialPrime = true
 
             for knownPrime in knownPrimes {
