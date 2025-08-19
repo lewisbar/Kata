@@ -51,4 +51,16 @@ struct PrimeCalculator2Tests {
     @Test func calculatePrimes_withUpperBoundFive_returnsTwoThreeFive() {
         #expect(PrimeCalculator2.calculatePrimes(upTo: 5) == [2, 3, 5])
     }
+
+    @Test func calculatePrimes_withUpperBoundSix_returnsTwoThreeFive() {
+        #expect(PrimeCalculator2.calculatePrimes(upTo: 6) == [2, 3, 5])
+    }
+
+    @Test func calculatePrimes_withUpperBoundSeven_returnsTwoThreeFiveSeven() {
+        #expect(PrimeCalculator2.calculatePrimes(upTo: 7) == [2, 3, 5, 7])
+    }
+
+    @Test func calculatePrimes_withUpperBoundEight_returnsTwoThreeFiveSeven() {
+        #expect(PrimeCalculator2.calculatePrimes(upTo: 8) == [2, 3, 5, 7])
+    }
 }
