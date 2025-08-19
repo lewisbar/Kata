@@ -9,7 +9,8 @@ import Testing
 
 enum PrimeCalculator2 {
     static func calculatePrimes(upTo upperBound: Int) -> [Int] {
-        []
+        if upperBound == 2 { return [2] }
+        return []
     }
 }
 
@@ -24,5 +25,9 @@ struct PrimeCalculator2Tests {
 
     @Test func calculatePrimes_withUpperBoundOne_returnsEmpty() {
         #expect(PrimeCalculator2.calculatePrimes(upTo: 1) == [])
+    }
+
+    @Test func calculatePrimes_withUpperBoundTwo_returnsTwo() {
+        #expect(PrimeCalculator2.calculatePrimes(upTo: 2) == [2])
     }
 }
