@@ -13,24 +13,28 @@ enum PrimeCalculator2 {
         if upperBound == 2 { return [2] }
 
         var knownPrimes = [2]
-
         let candidates = 3...upperBound
 
         for candidate in candidates {
-            var isPotentialPrime = true
+            let isPrime = candidate.isPrime(allLowerPrimes: knownPrimes)
 
-            for knownPrime in knownPrimes {
-                if candidate % knownPrime == 0 {
-                    isPotentialPrime = false
-                    break
-                }
-            }
-            if isPotentialPrime {
+            if isPrime {
                 knownPrimes.append(candidate)
             }
         }
 
         return knownPrimes
+    }
+}
+
+private extension Int {
+    func isPrime(allLowerPrimes: [Int]) -> Bool {
+        for prime in allLowerPrimes {
+            if self % prime == 0 {
+                return false
+            }
+        }
+        return true
     }
 }
 
