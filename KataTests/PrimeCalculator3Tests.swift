@@ -16,7 +16,7 @@ enum PrimeCalculator3 {
         var primes = [2]
 
         for candidate in candidates {
-            if primes.isNextPrime(candidate) {
+            if candidate.isNextPrime(after: primes) {
                 primes.append(candidate)
             }
         }
@@ -25,10 +25,10 @@ enum PrimeCalculator3 {
     }
 }
 
-private extension Array where Element == Int {
-    func isNextPrime(_ candidate: Int) -> Bool {
-        for lowerPrime in self {
-            if candidate % lowerPrime == 0 {
+private extension Int {
+    func isNextPrime(after allLowerPrimes: [Int]) -> Bool {
+        for lowerPrime in allLowerPrimes {
+            if self % lowerPrime == 0 {
                 return false
             }
         }
