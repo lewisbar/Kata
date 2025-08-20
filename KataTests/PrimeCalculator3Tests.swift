@@ -10,10 +10,9 @@ import Testing
 enum PrimeCalculator3 {
     static func primes(upTo upperBound: Int) -> [Int] {
         if upperBound < 2 { return [] }
-        if upperBound == 2 { return [2] }
 
-        let candidates = 3...upperBound
-        var knownPrimes = [2]
+        let candidates = 2...upperBound
+        var knownPrimes = [Int]()
 
         for candidate in candidates {
             if candidate.isNextPrime(after: knownPrimes) {
