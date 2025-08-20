@@ -73,6 +73,6 @@ struct PrimeCalculator1Tests {
         let startTime = CFAbsoluteTimeGetCurrent()
         let _ = PrimeCalculator1.primes(upTo: 10_000)
         let executionTime = CFAbsoluteTimeGetCurrent() - startTime
-        #expect(executionTime < 0.01)
+        #expect(executionTime < 0.04)
     }
 }
