@@ -11,7 +11,8 @@ enum PrimeCalculator3 {
     static func primes(upTo upperBound: Int) -> [Int] {
         if upperBound < 2 { return [] }
         if upperBound == 2 { return [2] }
-        return [2, 3]
+        if upperBound < 5 { return [2, 3] }
+        return [2, 3, 5]
     }
 }
 
@@ -38,5 +39,13 @@ struct PrimeCalculator3Tests {
 
     @Test func primesUpToFour_returnsTwoThree() {
         #expect(PrimeCalculator3.primes(upTo: 4) == [2, 3])
+    }
+
+    @Test func primesUpToFive_returnsTwoThreeFive() {
+        #expect(PrimeCalculator3.primes(upTo: 5) == [2, 3, 5])
+    }
+
+    @Test func primesUpToSix_returnsTwoThreeFive() {
+        #expect(PrimeCalculator3.primes(upTo: 6) == [2, 3, 5])
     }
 }
