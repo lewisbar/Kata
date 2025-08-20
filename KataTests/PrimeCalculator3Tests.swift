@@ -16,16 +16,18 @@ enum PrimeCalculator3 {
         var primes = [2]
 
         for candidate in candidates {
-            if isNextPrime(candidate, lowerPrimes: primes) {
+            if primes.isNextPrime(candidate) {
                 primes.append(candidate)
             }
         }
 
         return primes
     }
+}
 
-    private static func isNextPrime(_ candidate: Int, lowerPrimes: [Int]) -> Bool {
-        for lowerPrime in lowerPrimes {
+private extension Array where Element == Int {
+    func isNextPrime(_ candidate: Int) -> Bool {
+        for lowerPrime in self {
             if candidate % lowerPrime == 0 {
                 return false
             }
