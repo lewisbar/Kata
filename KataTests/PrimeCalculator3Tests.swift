@@ -13,15 +13,15 @@ enum PrimeCalculator3 {
         if upperBound == 2 { return [2] }
 
         let candidates = 3...upperBound
-        var primes = [2]
+        var knownPrimes = [2]
 
         for candidate in candidates {
-            if candidate.isNextPrime(after: primes) {
-                primes.append(candidate)
+            if candidate.isNextPrime(after: knownPrimes) {
+                knownPrimes.append(candidate)
             }
         }
 
-        return primes
+        return knownPrimes
     }
 }
 
