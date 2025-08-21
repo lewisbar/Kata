@@ -13,8 +13,9 @@ enum PrimesCalculator4 {
         guard upperBound > 2 else { return [2] }
 
         var knownPrimes = [2]
+        let candidates = 3...upperBound
 
-        for candidate in 3...upperBound {
+        for candidate in candidates {
             if isNextPrime(candidate, afterKnownPrimes: knownPrimes) {
                 knownPrimes.append(candidate)
             }
