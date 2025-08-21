@@ -43,4 +43,24 @@ struct PrimeCalculator4Tests {
     @Test func primesUpTo3_returns2and3() {
         #expect(PrimesCalculator4.primes(upTo: 3) == [2, 3])
     }
+
+    @Test func primesUpTo4_returns2and3() {
+        #expect(PrimesCalculator4.primes(upTo: 4) == [2, 3])
+    }
+
+    @Test func primesUpTo5_returns2and3and5() {
+        #expect(PrimesCalculator4.primes(upTo: 5) == [2, 3, 5])
+    }
+
+    @Test func primesUpTo6_returns2and3and5() {
+        #expect(PrimesCalculator4.primes(upTo: 6) == [2, 3, 5])
+    }
+
+    @Test func primesUpTo7_returns2and3and5and7() {
+        #expect(PrimesCalculator4.primes(upTo: 7) == [2, 3, 5, 7])
+    }
+
+    @Test func primesUpTo8_returns2and3and5and7() {
+        #expect(PrimesCalculator4.primes(upTo: 8) == [2, 3, 5, 7])
+    }
 }
