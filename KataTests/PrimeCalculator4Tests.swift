@@ -15,11 +15,20 @@ enum PrimesCalculator4 {
         var knownPrimes = [2]
 
         for candidate in 3...upperBound {
-            if candidate % 2 != 0 {
+            if isNextPrime(candidate, afterKnownPrimes: knownPrimes) {
                 knownPrimes.append(candidate)
             }
         }
         return knownPrimes
+    }
+
+    private static func isNextPrime(_ candidate: Int, afterKnownPrimes knownPrimes: [Int]) -> Bool {
+        for knownPrime in knownPrimes {
+            if candidate % knownPrime == 0 {
+                return false
+            }
+        }
+        return true
     }
 }
 
@@ -62,5 +71,9 @@ struct PrimeCalculator4Tests {
 
     @Test func primesUpTo8_returns2and3and5and7() {
         #expect(PrimesCalculator4.primes(upTo: 8) == [2, 3, 5, 7])
+    }
+
+    @Test func primesUpTo9_returns2and3and5and7() {
+        #expect(PrimesCalculator4.primes(upTo: 9) == [2, 3, 5, 7])
     }
 }
