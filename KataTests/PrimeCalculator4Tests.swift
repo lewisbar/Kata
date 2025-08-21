@@ -76,4 +76,20 @@ struct PrimeCalculator4Tests {
     @Test func primesUpTo9_returns2and3and5and7() {
         #expect(PrimesCalculator4.primes(upTo: 9) == [2, 3, 5, 7])
     }
+
+    @Test func primesUpTo10_returnsCorrectNumbers() {
+        #expect(PrimesCalculator4.primes(upTo: 10) == [2, 3, 5, 7])
+    }
+
+    @Test func primesUpTo11_returnsCorrectNumbers() {
+        #expect(PrimesCalculator4.primes(upTo: 11) == [2, 3, 5, 7, 11])
+    }
+
+    @Test func primesUpTo12_returnsCorrectNumbers() {
+        #expect(PrimesCalculator4.primes(upTo: 12) == [2, 3, 5, 7, 11])
+    }
+
+    @Test func primesUpTo13_returnsCorrectNumbers() {
+        #expect(PrimesCalculator4.primes(upTo: 13) == [2, 3, 5, 7, 11, 13])
+    }
 }
