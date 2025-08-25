@@ -27,11 +27,8 @@ private extension Int {
         let root = Int(sqrt(Double(self)))
 
         for knownPrime in knownPrimes {
-            guard knownPrime <= root else { return true }
-
-            if self % knownPrime == 0 {
-                return false
-            }
+            if knownPrime > root { return true }
+            if self % knownPrime == 0 { return false }
         }
         return true
     }
