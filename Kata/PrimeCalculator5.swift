@@ -27,13 +27,14 @@ private extension Int {
         let root = Int(sqrt(Double(self)))
 
         for knownPrime in knownPrimes {
-            if thresholdIsReached(with: knownPrime, threshold: root) { return true }
+            if knownPrime.isBeyond(threshold: root) { return true }
             if self.isMultiple(of: knownPrime) { return false }
         }
+        
         return true
     }
 
-    private func thresholdIsReached(with knownPrime: Int, threshold: Int) -> Bool {
-        knownPrime > threshold
+    private func isBeyond(threshold: Int) -> Bool {
+        self > threshold
     }
 }
