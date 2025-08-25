@@ -1,5 +1,5 @@
 //
-//  PrimesCalculator4.swift
+//  PrimeCalculator4.swift
 //  Kata
 //
 //  Created by LennartWisbar on 21.08.25.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum PrimesCalculator4 {
+public enum PrimeCalculator4 {
     public static func primes(upTo upperBound: Int) -> [Int] {
         guard upperBound >= 2 else { return [] }
 
