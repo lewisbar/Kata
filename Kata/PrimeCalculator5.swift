@@ -28,7 +28,7 @@ private extension Int {
 
         for knownPrime in knownPrimes {
             if thresholdIsReached(with: knownPrime, threshold: root) { return true }
-            if self % knownPrime == 0 { return false }
+            if self.isMultiple(of: knownPrime) { return false }
         }
         return true
     }
