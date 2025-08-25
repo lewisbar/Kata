@@ -21,4 +21,8 @@ struct PrimeCalculator5Tests {
     @Test func primesUpTo0_returnsEmpty() {
         #expect(PrimeCalculator5.primes(upTo: 0) == [])
     }
+
+    @Test func primesUpTo1_returnsEmpty() {
+        #expect(PrimeCalculator5.primes(upTo: 1) == [])
+    }
 }
