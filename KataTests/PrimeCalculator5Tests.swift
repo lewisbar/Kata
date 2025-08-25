@@ -15,17 +15,19 @@ enum PrimeCalculator5 {
         let candidates = 2...upperBound
 
         for candidate in candidates {
-            if isPrime(candidate, afterKnownPrimes: knownPrimes) {
+            if candidate.isPrime(afterKnownPrimes: knownPrimes) {
                 knownPrimes.append(candidate)
             }
         }
 
         return knownPrimes
     }
+}
 
-    private static func isPrime(_ candidate: Int, afterKnownPrimes knownPrimes: [Int]) -> Bool {
+private extension Int {
+    func isPrime(afterKnownPrimes knownPrimes: [Int]) -> Bool {
         for knownPrime in knownPrimes {
-            if candidate % knownPrime == 0 {
+            if self % knownPrime == 0 {
                 return false
             }
         }
