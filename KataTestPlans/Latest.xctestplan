@@ -1,0 +1,43 @@
+{
+  "configurations" : [
+    {
+      "id" : "A1F9B583-A32D-4235-A972-A2ABC0D6241A",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : {
+        "suites" : [
+          {
+            "name" : "PrimeCalculator1Tests"
+          },
+          {
+            "name" : "PrimeCalculator2Tests"
+          },
+          {
+            "name" : "PrimeCalculator3Tests"
+          },
+          {
+            "name" : "PrimeCalculator4Tests"
+          },
+          {
+            "name" : "PrimeCalculator5Tests"
+          }
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:Kata.xcodeproj",
+        "identifier" : "30283D282E53593300D99605",
+        "name" : "KataTests"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "169A3682-4921-4A70-943B-3C54EC9E0656",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Kata.xcodeproj",
+        "identifier" : "30283D282E53593300D99605",
+        "name" : "KataTests"
+      }
+    }
+  ],
+  "version" : 1
+}

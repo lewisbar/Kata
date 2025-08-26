@@ -23,6 +23,8 @@
 /* Begin PBXFileReference section */
 		30283D212E53593200D99605 /* Kata.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kata.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30283D292E53593300D99605 /* KataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30A1AA5A2E5DB49400A4A08D /* All.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = All.xctestplan; path = KataTestPlans/All.xctestplan; sourceTree = "<group>"; };
+		30A1AA5B2E5DB54800A4A08D /* Latest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = Latest.xctestplan; path = KataTestPlans/Latest.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -73,6 +75,8 @@
 		30283D172E53593200D99605 = {
 			isa = PBXGroup;
 			children = (
+				30A1AA5A2E5DB49400A4A08D /* All.xctestplan */,
+				30A1AA5B2E5DB54800A4A08D /* Latest.xctestplan */,
 				30283D232E53593200D99605 /* Kata */,
 				30283D2D2E53593300D99605 /* KataTests */,
 				30283D222E53593200D99605 /* Products */,
