@@ -38,4 +38,8 @@ struct PrimeCalculator6Tests {
     @Test func primesUpToFour_returnsCorrectResult() {
         #expect(PrimeCalculator6.primes(upTo: 4) == [2, 3])
     }
+
+    @Test func primesUpToFive_returnsCorrectResult() {
+        #expect(PrimeCalculator6.primes(upTo: 5) == [2, 3, 5])
+    }
 }
