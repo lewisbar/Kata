@@ -6,6 +6,7 @@
 //
 
 import Testing
+import Foundation
 
 enum PrimeCalculator6 {
     static func primes(upTo upperBound: Int) -> [Int] {
@@ -26,11 +27,16 @@ enum PrimeCalculator6 {
 
 private extension Int {
     func isPrime(afterPrimes lowerPrimes: [Int]) -> Bool {
+        let threshold = Int(sqrt(Double(self)))
+
         for lowerPrime in lowerPrimes {
+            guard lowerPrime <= threshold else { return true }
+
             if self.isMultiple(of: lowerPrime) {
                 return false
             }
         }
+        
         return true
     }
 }
@@ -94,5 +100,13 @@ struct PrimeCalculator6Tests {
 
     @Test func primesUpToThirteen_returnsCorrectResult() {
         #expect(PrimeCalculator6.primes(upTo: 13) == [2, 3, 5, 7, 11, 13])
+    }
+
+    @Test func primesUpTo_performance() {
+        let startTime = CFAbsoluteTimeGetCurrent()
+        let _ = PrimeCalculator6.primes(upTo: 10_000)
+        let executionTime = CFAbsoluteTimeGetCurrent() - startTime
+
+        #expect(executionTime < 0.04)
     }
 }
