@@ -15,19 +15,23 @@ enum PrimeCalculator6 {
         var collectedPrimes = [Int]()
 
         for candidate in candidates {
-            var isPotentialPrime = true
-            for collectedPrime in collectedPrimes {
-                if candidate.isMultiple(of: collectedPrime) {
-                    isPotentialPrime = false
-                    break
-                }
-            }
-            if isPotentialPrime {
+            if candidate.isPrime(afterPrimes: collectedPrimes) {
                 collectedPrimes.append(candidate)
             }
         }
 
         return collectedPrimes
+    }
+}
+
+private extension Int {
+    func isPrime(afterPrimes lowerPrimes: [Int]) -> Bool {
+        for lowerPrime in lowerPrimes {
+            if self.isMultiple(of: lowerPrime) {
+                return false
+            }
+        }
+        return true
     }
 }
 
