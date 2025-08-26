@@ -30,11 +30,8 @@ private extension Int {
         let threshold = squareRootRoundedDown()
 
         for lowerPrime in lowerPrimes {
-            guard lowerPrime <= threshold else { return true }
-
-            if self.isMultiple(of: lowerPrime) {
-                return false
-            }
+            if lowerPrime > threshold { return true }
+            if self.isMultiple(of: lowerPrime) { return false }
         }
 
         return true
