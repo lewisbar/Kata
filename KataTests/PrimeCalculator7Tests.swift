@@ -27,7 +27,7 @@ enum PrimeCalculator7 {
 
 private extension Int {
     func isPrime(afterPrimes primes: [Int]) -> Bool {
-        let threshold = Int(sqrt(Double(self)))
+        let threshold = squareRootRoundedDown()
 
         for prime in primes {
             guard prime <= threshold else { return true }
@@ -37,6 +37,10 @@ private extension Int {
             }
         }
         return true
+    }
+
+    func squareRootRoundedDown() -> Int {
+        Int(sqrt(Double(self)))
     }
 }
 
