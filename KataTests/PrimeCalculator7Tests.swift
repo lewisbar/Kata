@@ -69,6 +69,10 @@ struct PrimeCalculator7Tests {
         #expect(calculatePrimes(upTo: 13) == [2, 3, 5, 7, 11, 13])
     }
 
+    @Test func primesUpTo_returnsCorrectResultForUpperBoundOneHundred() {
+        #expect(calculatePrimes(upTo: 100) == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97])
+    }
+
     @Test func primesUpTo_performance() {
         let startTime = CFAbsoluteTimeGetCurrent()
         let _ = calculatePrimes(upTo: 10_000)
