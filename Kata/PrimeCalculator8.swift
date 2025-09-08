@@ -29,10 +29,7 @@ private extension Int {
 
         for lowerPrime in lowerPrimes {
             guard lowerPrime <= highestNecessaryPrimeToCheck else { return true }
-
-            if self.isMultiple(of: lowerPrime) {
-                return false
-            }
+            if self.isMultiple(of: lowerPrime) { return false }
         }
 
         return true
