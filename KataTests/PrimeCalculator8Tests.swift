@@ -9,8 +9,8 @@ import Testing
 
 enum PrimeCalculator8 {
     static func primes(upTo upperBound: Int) -> [Int] {
-        if upperBound >= 2 { return [2] + Array(2...upperBound).filter { $0 % 2 != 0 } }
-        return []
+        guard upperBound > 1 else { return [] }
+        return [2] + Array(2...upperBound).filter { $0 % 2 != 0 }
     }
 }
 
