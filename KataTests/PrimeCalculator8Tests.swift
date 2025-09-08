@@ -11,8 +11,11 @@ enum PrimeCalculator8 {
     static func primes(upTo upperBound: Int) -> [Int] {
         guard upperBound > 1 else { return [] }
         let candidates = 2...upperBound
-        let isPrime = { $0 == 2 || !$0.isMultiple(of: 2) }
         return candidates.filter(isPrime)
+    }
+
+    private static func isPrime(_ candidate: Int) -> Bool {
+        candidate == 2 || !candidate.isMultiple(of: 2)
     }
 }
 
