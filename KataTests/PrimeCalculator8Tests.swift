@@ -68,4 +68,8 @@ struct PrimeCalculator8Tests {
     @Test func upperBound10_returnsCorrectResult() {
         #expect(PrimeCalculator8.primes(upTo: 10) == [2, 3, 5, 7])
     }
+
+    @Test func upperBound11_returnsCorrectResult() {
+        #expect(PrimeCalculator8.primes(upTo: 11) == [2, 3, 5, 7, 11])
+    }
 }
