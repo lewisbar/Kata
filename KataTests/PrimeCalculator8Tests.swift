@@ -6,39 +6,7 @@
 //
 
 import Testing
-import Foundation
-
-enum PrimeCalculator8 {
-    static func primes(upTo upperBound: Int) -> [Int] {
-        guard upperBound >= 2 else { return [] }
-        let candidates = 2...upperBound
-        var collectedPrimes: [Int] = []
-
-        for candidate in candidates {
-            if candidate.isNextPrime(afterPrimes: collectedPrimes) {
-                collectedPrimes.append(candidate)
-            }
-        }
-
-        return collectedPrimes
-    }
-}
-
-private extension Int {
-    func isNextPrime(afterPrimes lowerPrimes: [Int]) -> Bool {
-        let highestNecessaryPrimeToCheck = Int(sqrt(Double(self)))
-
-        for lowerPrime in lowerPrimes {
-            guard lowerPrime <= highestNecessaryPrimeToCheck else { return true }
-
-            if self.isMultiple(of: lowerPrime) {
-                return false
-            }
-        }
-
-        return true
-    }
-}
+import Kata
 
 struct PrimeCalculator8Tests {
     @Test func negativeUpperBound_returnsEmpty() {
