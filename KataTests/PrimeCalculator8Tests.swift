@@ -21,4 +21,8 @@ struct PrimeCalculator8Tests {
     @Test func upperBoundZero_returnsEmpty() {
         #expect(PrimeCalculator8.primes(upTo: 0) == [])
     }
+
+    @Test func upperBound1_returnsEmpty() {
+        #expect(PrimeCalculator8.primes(upTo: 1) == [])
+    }
 }
