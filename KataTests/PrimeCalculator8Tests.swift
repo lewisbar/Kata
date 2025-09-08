@@ -15,7 +15,8 @@ enum PrimeCalculator8 {
     }
 
     private static func isPrime(_ candidate: Int) -> Bool {
-        candidate == 2 || !candidate.isMultiple(of: 2)
+        if candidate == 2 || candidate == 3 { return true }
+        return !candidate.isMultiple(of: 2) && !candidate.isMultiple(of: 3)
     }
 }
 
@@ -58,5 +59,9 @@ struct PrimeCalculator8Tests {
 
     @Test func upperBound8_returnsCorrectResult() {
         #expect(PrimeCalculator8.primes(upTo: 8) == [2, 3, 5, 7])
+    }
+
+    @Test func upperBound9_returnsCorrectResult() {
+        #expect(PrimeCalculator8.primes(upTo: 9) == [2, 3, 5, 7])
     }
 }
