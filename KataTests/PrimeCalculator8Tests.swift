@@ -11,12 +11,27 @@ enum PrimeCalculator8 {
     static func primes(upTo upperBound: Int) -> [Int] {
         guard upperBound >= 2 else { return [] }
         let candidates = 2...upperBound
-        return candidates.filter(isPrime)
-    }
+        var collectedPrimes: [Int] = []
 
-    private static func isPrime(_ candidate: Int) -> Bool {
-        if candidate == 2 || candidate == 3 { return true }
-        return !candidate.isMultiple(of: 2) && !candidate.isMultiple(of: 3)
+        for candidate in candidates {
+            if candidate.isNextPrime(afterPrimes: collectedPrimes) {
+                collectedPrimes.append(candidate)
+            }
+        }
+
+        return collectedPrimes
+    }
+}
+
+private extension Int {
+    func isNextPrime(afterPrimes lowerPrimes: [Int]) -> Bool {
+        for lowerPrime in lowerPrimes {
+            if self.isMultiple(of: lowerPrime) {
+                return false
+            }
+        }
+
+        return true
     }
 }
 
@@ -123,5 +138,9 @@ struct PrimeCalculator8Tests {
 
     @Test func upperBound24_returnsCorrectResult() {
         #expect(PrimeCalculator8.primes(upTo: 24) == [2, 3, 5, 7, 11, 13, 17, 19, 23])
+    }
+
+    @Test func upperBound25_returnsCorrectResult() {
+        #expect(PrimeCalculator8.primes(upTo: 25) == [2, 3, 5, 7, 11, 13, 17, 19, 23])
     }
 }
