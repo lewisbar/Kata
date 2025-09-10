@@ -35,6 +35,9 @@
           },
           {
             "name" : "PrimeCalculator7Tests"
+          },
+          {
+            "name" : "PrimeCalculator8Tests"
           }
         ]
       },
