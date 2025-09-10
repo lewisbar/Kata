@@ -6,37 +6,7 @@
 //
 
 import Testing
-import Foundation
-
-enum PrimeCalculator9 {
-    static func primes(upTo upperBound: Int) -> [Int] {
-        guard upperBound >= 2 else { return [] }
-
-        let candidates = 2...upperBound
-        var collectedPrimes: [Int] = []
-
-        for candidate in candidates {
-            if candidate.isPrime(afterPrimes: collectedPrimes) {
-                collectedPrimes.append(candidate)
-            }
-        }
-
-        return collectedPrimes
-    }
-}
-
-private extension Int {
-    func isPrime(afterPrimes primes: [Int]) -> Bool {
-        let highestNecessaryQuotientToCheck = Int(sqrt(Double(self)))
-
-        for prime in primes {
-            guard prime <= highestNecessaryQuotientToCheck else { return true }
-            if self.isMultiple(of: prime) { return false }
-        }
-
-        return true
-    }
-}
+import Kata
 
 struct PrimeCalculator9Tests {
     @Test func primesUpTo_returnsCorrectPrimes() {
