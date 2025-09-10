@@ -15,16 +15,22 @@ enum PrimeCalculator9 {
 
 struct PrimeCalculator9Tests {
     @Test func upperBoundSmallerThan2_returnsEmpty() {
-        #expect(PrimeCalculator9.primes(upTo: -1) == [])
-        #expect(PrimeCalculator9.primes(upTo: 0) == [])
-        #expect(PrimeCalculator9.primes(upTo: 1) == [])
+        #expect(calculatePrimes(upTo: -1) == [])
+        #expect(calculatePrimes(upTo: 0) == [])
+        #expect(calculatePrimes(upTo: 1) == [])
     }
 
     @Test func upperBound2_returns2() {
-        #expect(PrimeCalculator9.primes(upTo: 2) == [2])
+        #expect(calculatePrimes(upTo: 2) == [2])
     }
 
     @Test func upperBound3_returnsCorrectNumbers() {
-        #expect(PrimeCalculator9.primes(upTo: 3) == [2, 3])
+        #expect(calculatePrimes(upTo: 3) == [2, 3])
+    }
+
+    // MARK: - Helpers
+    
+    private func calculatePrimes(upTo upperBound: Int) -> [Int] {
+        PrimeCalculator9.primes(upTo: upperBound)
     }
 }
