@@ -49,6 +49,15 @@ struct PrimeCalculator9Tests {
         #expect(calculatePrimes(upTo: 7) == [2, 3, 5, 7])
         #expect(calculatePrimes(upTo: 8) == [2, 3, 5, 7])
         #expect(calculatePrimes(upTo: 9) == [2, 3, 5, 7])
+        #expect(calculatePrimes(upTo: 10) == [2, 3, 5, 7])
+        #expect(calculatePrimes(upTo: 11) == [2, 3, 5, 7, 11])
+        #expect(calculatePrimes(upTo: 12) == [2, 3, 5, 7, 11])
+        #expect(calculatePrimes(upTo: 13) == [2, 3, 5, 7, 11, 13])
+        #expect(calculatePrimes(upTo: 14) == [2, 3, 5, 7, 11, 13])
+        #expect(calculatePrimes(upTo: 15) == [2, 3, 5, 7, 11, 13])
+        #expect(calculatePrimes(upTo: 16) == [2, 3, 5, 7, 11, 13])
+        #expect(calculatePrimes(upTo: 17) == [2, 3, 5, 7, 11, 13, 17])
+        #expect(calculatePrimes(upTo: 100) == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97])
     }
 
     // MARK: - Helpers
