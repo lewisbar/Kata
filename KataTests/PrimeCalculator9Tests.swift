@@ -14,7 +14,9 @@ enum PrimeCalculator9 {
 }
 
 struct PrimeCalculator9Tests {
-    @Test func negativeUpperBound_returnsEmpty() {
+    @Test func upperBoundSmallerThan2_returnsEmpty() {
         #expect(PrimeCalculator9.primes(upTo: -1) == [])
+        #expect(PrimeCalculator9.primes(upTo: 0) == [])
+        #expect(PrimeCalculator9.primes(upTo: 1) == [])
     }
 }
