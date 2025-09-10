@@ -32,6 +32,13 @@ struct PrimeCalculator9Tests {
         #expect(calculatePrimes(upTo: 4) == [2, 3])
     }
 
+    @Test func upperBoundUpTo8_returnsCorrectNumbers() {
+        #expect(calculatePrimes(upTo: 5) == [2, 3, 5])
+        #expect(calculatePrimes(upTo: 6) == [2, 3, 5])
+        #expect(calculatePrimes(upTo: 7) == [2, 3, 5, 7])
+        #expect(calculatePrimes(upTo: 8) == [2, 3, 5, 7])
+    }
+
     // MARK: - Helpers
 
     private func calculatePrimes(upTo upperBound: Int) -> [Int] {
